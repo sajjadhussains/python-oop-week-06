@@ -17,7 +17,12 @@ class Air_lines:
         self.aircrafts=aircrafts
         # for air in aircrafts.items():
         #     print(air)
-    def get_aircraft(self,code):
-        return self.aircrafts
+    def get_aircraft(self,aircraft_code):
+        return self.aircrafts[aircraft_code]
+    def get_aircraft_by_distance(self,distance):
+        for aircraft in self.aircrafts.values():
+            if aircraft.flight_range<distance:
+                return aircraft
+
 
 Air_lines()
